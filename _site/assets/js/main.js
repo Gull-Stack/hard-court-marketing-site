@@ -215,20 +215,9 @@ function initStatsAnimation() {
     statsObserver.observe(statsSection);
 }
 
-// Parallax Effects
+// Parallax Effects (disabled — causes overlay issues on mobile)
 function initParallax() {
-    const hero = document.querySelector('.hero');
-    
-    window.addEventListener('scroll', function() {
-        const scrolled = window.pageYOffset;
-        const heroHeight = hero ? hero.offsetHeight : 0;
-        
-        // Hero parallax
-        if (hero && scrolled < heroHeight) {
-            const parallaxSpeed = 0.5;
-            hero.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
-        }
-    });
+    // no-op
 }
 
 // Enhanced Card Hover Effects
