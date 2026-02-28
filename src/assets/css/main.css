@@ -803,6 +803,25 @@ footer {
   padding: 24px;
 }
 
+/* ─── Pricing Features List ─── */
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pricing-features li {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.5;
+}
+
+.pricing-features li:last-child {
+  border-bottom: none;
+}
+
 /* ─── Utility ─── */
 .text-center { text-align: center; }
 .text-left { text-align: left; }
