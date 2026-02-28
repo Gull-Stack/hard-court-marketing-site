@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} | Hard Court Marketing</title>
+    <meta name="description" content="{{ description }}">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{ title }} | Hard Court Marketing">
+    <meta property="og:description" content="{{ description }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hardcourtmarketing.com{{ page.url }}">
+    <meta property="og:image" content="https://hardcourtmarketing.com/logo-full.png">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ title }} | Hard Court Marketing">
+    <meta name="twitter:description" content="{{ description }}">
+    <meta name="twitter:image" content="https://hardcourtmarketing.com/logo-full.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/logo-wordmark.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Hard Court Marketing",
+        "url": "https://hardcourtmarketing.com",
+        "logo": "https://hardcourtmarketing.com/logo-full.png",
+        "description": "AI-powered marketing for tennis, pickleball, and basketball court contractors. Get more qualified leads, higher-value projects, and dominant local search rankings.",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-555-XXX-XXXX",
+            "contactType": "Customer Service",
+            "email": "info@hardcourtmarketing.com",
+            "availableLanguage": "en"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "US"
+        },
+        "sameAs": []
+    }
+    </script>
+    
+    <!-- BreadcrumbList Schema -->
+    {% if breadcrumbs %}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://hardcourtmarketing.com/"
+            }{% for crumb in breadcrumbs %},
+            {
+                "@type": "ListItem",
+                "position": {{ loop.index + 1 }},
+                "name": "{{ crumb.name }}",
+                "item": "https://hardcourtmarketing.com{{ crumb.url }}"
+            }{% endfor %}
+        ]
+    }
+    </script>
+    {% endif %}
+    
+    <!-- FAQPage Schema -->
+    {% if schema.faq %}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {% for faq in schema.faq %}
+            {
+                "@type": "Question",
+                "name": "{{ faq.question }}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{ faq.answer }}"
+                }
+            }{% if not loop.last %},{% endif %}
+            {% endfor %}
+        ]
+    }
+    </script>
+    {% endif %}
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo-link">
+                <img src="/logo-wordmark.png" alt="Hard Court Marketing" class="logo">
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li><a href="/portfolio">Portfolio</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/faq">FAQ</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-dropdown-toggle">Industries ↓</a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="/industries/court-installers">Court Installers</a></li>
+                        <li><a href="/industries/surface-manufacturers">Surface Manufacturers</a></li>
+                        <li><a href="/industries/turf-companies">Turf Companies</a></li>
+                        <li><a href="/industries/installation-companies">Installation Companies</a></li>
+                        <li><a href="/industries/pickleball-equipment">Pickleball Equipment</a></li>
+                        <li><a href="/industries/tennis-equipment">Tennis Equipment</a></li>
+                        <li><a href="/industries/basketball-equipment">Basketball Equipment</a></li>
+                        <li><a href="/industries/lighting-manufacturers">Lighting Manufacturers</a></li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <a href="/contact" class="cta-button">Get Free Audit</a>
+            
+            <button class="mobile-menu-toggle">☰</button>
+        </nav>
+    </header>
+    
+    <main>
+        {{ content | safe }}
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="/logo-full.png" alt="Hard Court Marketing" class="footer-logo">
+                    <p>AI-powered marketing for sports surface contractors. Get more qualified leads and higher-value projects.</p>
+                </div>
+                
+                <div class="footer-links-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="/pricing">Pricing</a></li>
+                        <li><a href="/portfolio">Portfolio</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links-section">
+                    <h4>Industries</h4>
+                    <ul class="footer-links">
+                        <li><a href="/industries/court-installers">Court Installers</a></li>
+                        <li><a href="/industries/surface-manufacturers">Surface Manufacturers</a></li>
+                        <li><a href="/industries/turf-companies">Turf Companies</a></li>
+                        <li><a href="/industries/installation-companies">Installation Companies</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links-section">
+                    <h4>Equipment</h4>
+                    <ul class="footer-links">
+                        <li><a href="/industries/pickleball-equipment">Pickleball Equipment</a></li>
+                        <li><a href="/industries/tennis-equipment">Tennis Equipment</a></li>
+                        <li><a href="/industries/basketball-equipment">Basketball Equipment</a></li>
+                        <li><a href="/industries/lighting-manufacturers">Lighting</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>Email: info@hardcourtmarketing.com</p>
+                    <p>Phone: (555) XXX-XXXX</p>
+                    <ul class="footer-links">
+                        <li><a href="/faq">FAQ</a></li>
+                        <li><a href="/sitemap.xml">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Hard Court Marketing. All rights reserved.</p>
+                <p class="powered-by">Powered by <a href="https://gullstack.com" target="_blank">GullStack technology</a></p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>
