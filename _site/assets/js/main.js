@@ -116,11 +116,10 @@ function initMobileMenu() {
             
             // Animate toggle icon
             if (navLinks.classList.contains('mobile-active')) {
-                mobileToggle.innerHTML = '✕';
-                mobileToggle.style.transform = 'rotate(180deg)';
+                mobileToggle.innerHTML = 'Close';
+                mobileToggle.style.zIndex = '1000';
             } else {
-                mobileToggle.innerHTML = '☰';
-                mobileToggle.style.transform = 'rotate(0deg)';
+                mobileToggle.innerHTML = 'Menu';
             }
         });
         
@@ -129,8 +128,7 @@ function initMobileMenu() {
         navItems.forEach(function(item) {
             item.addEventListener('click', function() {
                 navLinks.classList.remove('mobile-active');
-                mobileToggle.innerHTML = '☰';
-                mobileToggle.style.transform = 'rotate(0deg)';
+                mobileToggle.innerHTML = 'Menu';
             });
         });
         
@@ -138,8 +136,7 @@ function initMobileMenu() {
         document.addEventListener('click', function(e) {
             if (!e.target.closest('nav') && navLinks.classList.contains('mobile-active')) {
                 navLinks.classList.remove('mobile-active');
-                mobileToggle.innerHTML = '☰';
-                mobileToggle.style.transform = 'rotate(0deg)';
+                mobileToggle.innerHTML = 'Menu';
             }
         });
     }
