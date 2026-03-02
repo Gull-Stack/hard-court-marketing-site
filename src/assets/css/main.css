@@ -964,6 +964,90 @@ footer {
   }
 }
 
+/* ─── Portfolio Cards ─── */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  max-width: 900px;
+}
+
+.portfolio-card {
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.03);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.portfolio-card:hover {
+  border-color: rgba(255,255,255,0.15);
+  transform: translateY(-4px);
+}
+
+.portfolio-screenshot {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+}
+
+.portfolio-screenshot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.4s ease;
+}
+
+.portfolio-card:hover .portfolio-screenshot img {
+  transform: scale(1.03);
+}
+
+.portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio-card:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+.portfolio-visit {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255,255,255,0.4);
+  padding: 10px 24px;
+  border-radius: 6px;
+}
+
+.portfolio-info {
+  padding: 28px 32px;
+}
+
+.portfolio-info h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.portfolio-info p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 16px;
+}
+
 @media (max-width: 480px) {
   .container {
     padding: 0 16px;
