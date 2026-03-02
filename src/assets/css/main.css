@@ -626,6 +626,36 @@ footer {
   color: #ffffff;
 }
 
+.gullstack-footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.gullstack-bird-logo {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.gullstack-footer-link:hover .gullstack-bird-logo {
+  opacity: 1;
+}
+
+.gullstack-wordmark {
+  font-family: 'Young Serif', Georgia, serif;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.5);
+  transition: color 0.2s ease;
+}
+
+.gullstack-footer-link:hover .gullstack-wordmark {
+  color: #ffffff;
+}
+
 /* ─── Animations ─── */
 .fade-in-up {
   opacity: 0;

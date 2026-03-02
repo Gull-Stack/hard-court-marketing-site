@@ -626,6 +626,36 @@ footer {
   color: #ffffff;
 }
 
+.gullstack-footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.gullstack-bird-logo {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.gullstack-footer-link:hover .gullstack-bird-logo {
+  opacity: 1;
+}
+
+.gullstack-wordmark {
+  font-family: 'Young Serif', Georgia, serif;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.5);
+  transition: color 0.2s ease;
+}
+
+.gullstack-footer-link:hover .gullstack-wordmark {
+  color: #ffffff;
+}
+
 /* ─── Animations ─── */
 .fade-in-up {
   opacity: 0;
@@ -886,10 +916,13 @@ footer {
     left: 0;
     right: 0;
     bottom: 0;
-    background: #000000;
-    padding: 80px 24px 40px;
+    background: rgba(0, 0, 0, 0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 100px 32px 40px;
     flex-direction: column;
-    gap: 8px;
+    align-items: flex-start;
+    gap: 4px;
     z-index: 999;
   }
 
@@ -898,12 +931,14 @@ footer {
   }
 
   .nav-links a {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 600;
     color: #ffffff;
-    padding: 12px 0;
+    padding: 14px 0;
     border-bottom: 1px solid rgba(255,255,255,0.08);
     display: block;
+    width: 100%;
+    text-align: left;
   }
 
   .cta-nav {
